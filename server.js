@@ -36,6 +36,7 @@ let config = require('./nuxt.config.js')
 // We instantiate Nuxt.js with the options
 const isProd = process.env.NODE_ENV === 'production'
 config.dev = !isProd
+console.log('env', process.env.NODE_ENV)
 
 const nuxt = new Nuxt(config)
 
