@@ -16,6 +16,8 @@ app.use(session({
 
 // POST `/api/login` to log in the user and add him to the `req.session.authUser`
 app.post('/api/login', function (req, res) {
+  // with external API, a token might be returned along with other info such as username.
+  // store token in session here, and access it with nuxtServerInit.
   if (req.body.email === 'demo@gmail.com' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
     return res.json({ username: 'demo' })

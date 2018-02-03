@@ -25,6 +25,8 @@ const mutations = {
 const actions = {
   nuxtServerInit({ commit }, { req }) {
     console.log('nuxtServerInit')
+    // if auth token used by external API, fetch here e.g. req.session.authToken
+    // then it can be accessed with store on all API calls
     if (req.session && req.session.authUser) {
       commit('login')
     } else {
